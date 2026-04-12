@@ -1,0 +1,33 @@
+import { Link } from 'react-router-dom';
+import './ProjectCard.css';
+
+export default function ProjectCard({ project }) {
+  return (
+    <div className="project-card">
+      <h3 className="project-title">{project.title}</h3>
+      <p className="project-subtitle">{project.subtitle}</p>
+      <p className="project-description">{project.description}</p>
+      <div className="project-tech">
+        {project.tech.map((t) => (
+          <span key={t} className="tech-tag">{t}</span>
+        ))}
+      </div>
+      {project.id === 'artemis' ? (
+        <Link to={`/projects/${project.id}`} className="project-link">
+          View Details →
+        </Link>
+      ) : (
+        project.links?.github && (
+          <a
+            href={project.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            GitHub →
+          </a>
+        )
+      )}
+    </div>
+  );
+}
