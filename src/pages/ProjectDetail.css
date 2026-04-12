@@ -139,46 +139,56 @@
 .feature-item .feature-desc {
   font-size: 0.9rem;
   color: #666;
-  margin: 0;
+  margin: 0 0 1.5rem;
   line-height: 1.6;
 }
 
-.project-links {
+.mode-list {
   display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mode-block {
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.mode-block:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.mode-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
+.mode-media {
+  display: flex;
+}
+
+.mode-media img,
+.mode-media video {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
+  border: 1px solid #eee;
+  transition: transform 0.2s;
 }
 
-.btn-primary {
-  background: #333;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #555;
-}
-
-.btn-outline {
-  background: #fff;
-  color: #333;
-  border: 1px solid #ddd;
-}
-
-.btn-outline:hover {
-  border-color: #333;
-}
-
-.not-found {
-  padding-top: 120px;
-  text-align: center;
+.mode-media:hover img,
+.mode-media:hover video {
+  transform: scale(1.03);
 }
 
 .not-found h2 {
@@ -263,5 +273,13 @@
 
   .project-links {
     flex-direction: column;
+  }
+
+  .mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mode-media img {
+    height: 180px;
   }
 }

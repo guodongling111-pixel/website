@@ -2,6 +2,22 @@ import { useParams, Link } from 'react-router-dom';
 import { projects, artemisFeatures } from '../data/content';
 import './ProjectDetail.css';
 
+import itineraryMainVideo from '../assets/itinerary-main.mp4';
+import itineraryMain1 from '../assets/itinerary-main1.png';
+import itineraryMain2 from '../assets/itinerary-mian2.png';
+import itineraryRestVideo from '../assets/itinerary-rest.mp4';
+import itineraryRest1 from '../assets/itinerary-rest1.png';
+import itineraryRest2 from '../assets/itinerary-rest2.png';
+import tagVideo from '../assets/tag.mp4';
+import tag1 from '../assets/tag1.png';
+import tag2 from '../assets/tag2.png';
+import foodVideo from '../assets/food.mp4';
+import food1 from '../assets/food1.png';
+import food2 from '../assets/food2.png';
+import introVideo from '../assets/intro.mp4';
+import intro1 from '../assets/intro1.png';
+import intro2 from '../assets/intro2.png';
+
 const artemisTargetUsers = [
   '年轻女性（18-35岁）',
   '喜欢自由行、Citywalk',
@@ -40,10 +56,77 @@ function InfoCard({ title, children }) {
 }
 
 function FeatureItem({ feature }) {
+  const getMediaSrc = (src) => {
+    if (src === 'itinerary-main.mp4') return itineraryMainVideo;
+    if (src === 'itinerary-main1.png') return itineraryMain1;
+    if (src === 'itinerary-mian2.png') return itineraryMain2;
+    if (src === 'itinerary-rest.mp4') return itineraryRestVideo;
+    if (src === 'itinerary-rest1.png') return itineraryRest1;
+    if (src === 'itinerary-rest2.png') return itineraryRest2;
+    if (src === 'tag.mp4') return tagVideo;
+    if (src === 'tag1.png') return tag1;
+    if (src === 'tag2.png') return tag2;
+    if (src === 'food.mp4') return foodVideo;
+    if (src === 'food1.png') return food1;
+    if (src === 'food2.png') return food2;
+    if (src === 'intro.mp4') return introVideo;
+    if (src === 'intro1.png') return intro1;
+    if (src === 'intro2.png') return intro2;
+    return src;
+  };
+
+  if (feature.modes) {
+    return (
+      <div className="feature-item">
+        <h3 className="feature-title">{feature.title}</h3>
+        <p className="feature-desc">{feature.description}</p>
+        <div className="mode-list">
+          {feature.modes.map((mode, idx) => (
+            <div key={idx} className="mode-block">
+              <h4 className="mode-title">{mode.title}</h4>
+              <div className="mode-grid">
+                {mode.items.map((item, itemIdx) => (
+                  <div key={itemIdx} className="mode-media">
+                    {item.type === 'video' ? (
+                      <video src={getMediaSrc(item.src)} controls onClick={(e) => e.stopPropagation()} />
+                    ) : (
+                      <img 
+                        src={getMediaSrc(item.src)} 
+                        alt="" 
+                        onClick={(e) => e.preventDefault()} 
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="feature-item">
       <h3 className="feature-title">{feature.title}</h3>
       <p className="feature-desc">{feature.description}</p>
+      {feature.items && (
+        <div className="mode-grid">
+            {feature.items.map((item, idx) => (
+              <div key={idx} className="mode-media">
+                {item.type === 'video' ? (
+                  <video src={getMediaSrc(item.src)} controls onClick={(e) => e.stopPropagation()} />
+                ) : (
+                  <img 
+                    src={getMediaSrc(item.src)} 
+                    alt="" 
+                    onClick={(e) => e.preventDefault()} 
+                  />
+                )}
+              </div>
+            ))}
+        </div>
+      )}
     </div>
   );
 }

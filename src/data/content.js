@@ -10,21 +10,54 @@ export const artemisFeatures = [
     id: 'itinerary',
     title: '行程生成与编辑系统',
     description: '基于用户输入自动生成多日结构化行程，并通过"点击选择"方式从海量内容中筛选景点，支持用户对结果进行自由编辑与调整，实现高效与灵活的平衡。',
+    modes: [
+      {
+        title: '标准行程模式',
+        items: [
+          { type: 'video', src: 'itinerary-main.mp4' },
+          { type: 'image', src: 'itinerary-main1.png' },
+          { type: 'image', src: 'itinerary-mian2.png' },
+        ],
+      },
+      {
+        title: '休息日模式',
+        items: [
+          { type: 'video', src: 'itinerary-rest.mp4' },
+          { type: 'image', src: 'itinerary-rest1.png' },
+          { type: 'image', src: 'itinerary-rest2.png' },
+        ],
+      },
+    ],
   },
   {
     id: 'poi-filter',
     title: '标签化分类系统',
     description: '围绕"出片与在地体验"构建结构化标签体系，通过文艺/小众/拍照等标签帮助用户快速筛选高价值兴趣点，降低决策成本，提升选择效率。',
+    items: [
+      { type: 'video', src: 'tag.mp4' },
+      { type: 'image', src: 'tag1.png' },
+      { type: 'image', src: 'tag2.png' },
+    ],
   },
   {
     id: 'food',
     title: '餐饮融合系统',
     description: '基于年轻用户"低强度、松弛感旅行"的行为特征，将餐厅与外卖选项嵌入行程时间轴，支持晚出发、酒店休息等灵活场景。',
+    items: [
+      { type: 'video', src: 'food.mp4' },
+      { type: 'image', src: 'food1.png' },
+      { type: 'image', src: 'food2.png' },
+    ],
   },
   {
     id: 'import',
     title: '内容导入系统',
     description: '支持小红书链接解析，将非结构化攻略内容转化为可选择的行程节点，提升信息利用效率。',
+    items: [
+      { type: 'video', src: 'intro.mp4' },
+      { type: 'image', src: 'intro1.png' },
+      { type: 'image', src: 'intro2.png' },
+    ],
   },
 ];
 
