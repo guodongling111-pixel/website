@@ -1,7 +1,6 @@
 export const skills = {
   frontend: ['React', 'Next.js', 'JavaScript', 'Tailwind CSS'],
   mapping: ['Leaflet'],
-  data: ['Python', 'Selenium'],
   deployment: ['Vercel'],
 };
 
@@ -82,35 +81,8 @@ export const projects = [
       '围绕"出片与在地文化体验"构建产品核心价值，区别于传统效率导向的旅行工具',
     ],
     links: {
-      github: 'https://github.com',
-      demo: 'https://vercel.com',
-    },
-  },
-  {
-    id: 'ecommerce-ai',
-    title: '跨境电商AI选品系统',
-    subtitle: 'AI驱动的选品与爆款预测工具',
-    description: '基于数据分析与AI模型的选品工具，提升跨境电商商家的选品效率与爆款预测能力。',
-    fullDescription: '该项目围绕跨境电商商家"选品效率低、爆款预测难"的核心问题，构建了一套基于数据驱动与AI模型的选品系统。通过对10,000+商品数据的分析与建模，实现爆款特征提取与竞品分析，辅助商家进行更科学的选品决策。',
-    background: {
-      problem: '跨境电商商家在选品过程中依赖经验，缺乏数据支持，导致选品效率低、爆款预测难，同时市场竞争激烈，需要更高效的数据工具辅助决策。',
-      goal: '构建一个基于AI与数据分析的选品系统，提高选品效率，并增强爆款预测能力。',
-    },
-    features: [
-      '爆款特征分析：基于商品数据提取潜在爆款特征',
-      '竞品分析：对比同类商品表现，辅助决策',
-      '数据驱动选品：基于10,000+商品数据提供选品建议',
-      '模型辅助决策：结合AI模型提升选品精准度',
-    ],
-    tech: ['Python', 'Selenium', 'Data Analysis'],
-    highlights: [
-      '基于10,000+商品数据构建选品分析体系',
-      '结合AI模型进行爆款预测与特征提取',
-      '整合业务与数据，实现产品化落地',
-      '基于1500+用户反馈数据持续优化模型效果',
-    ],
-    links: {
-      github: 'https://github.com',
+      github: 'https://github.com/guodongling111-pixel',
+      demo: 'https://tourism-app-teal.vercel.app/',
     },
   },
   {
@@ -139,8 +111,7 @@ export const profile = {
   skills: [
     '产品思维（用户问题拆解与功能设计）',
     '前端开发能力（React）',
-    '地图与空间信息应用（Leaflet）',
-    '数据抓取与分析（Python / Selenium）',
+    '地图与空间信息产品（Leaflet）',
   ],
   interests: [
     '旅行科技（Travel Tech）',
@@ -148,6 +119,6 @@ export const profile = {
     'AI与数据驱动产品',
   ],
   email: '1748025085@qq.com',
-  github: 'https://github.com',
+  github: 'https://github.com/guodongling111-pixel',
   linkedin: 'https://linkedin.com',
 };

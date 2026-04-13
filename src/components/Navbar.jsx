@@ -2,10 +2,9 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const navItems = [
-  { path: '/', label: '首页' },
-  { path: '/projects', label: '项目' },
-  { path: '/about', label: '关于' },
-  { path: '/contact', label: '联系' },
+  { path: '/', label: 'Intro' },
+  { path: '/projects', label: 'Projects' },
+  { path: '/contact', label: 'Contacts' },
 ];
 
 export default function Navbar() {

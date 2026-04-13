@@ -14,7 +14,7 @@ export default function ProjectCard({ project }) {
       </div>
       {project.id === 'artemis' ? (
         <Link to={`/projects/${project.id}`} className="project-link">
-          View Details →
+          查看详情 →
         </Link>
       ) : (
         project.links?.github && (
