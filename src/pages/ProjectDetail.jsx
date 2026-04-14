@@ -101,9 +101,12 @@ function parseBold(text) {
   });
 }
 
-function InfoCard({ title, children }) {
+function InfoCard({ title, children, isActive, onClick }) {
   return (
-    <div className="info-card">
+    <div 
+      className={`info-card ${isActive ? 'active' : ''}`}
+      onClick={onClick}
+    >
       <h3 className="info-card-title">{title}</h3>
       <div className="info-card-content">{children}</div>
     </div>
@@ -202,6 +205,12 @@ function FeatureItem({ feature }) {
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleCardClick = (cardId) => {
+    setActiveCard(cardId);
+    setTimeout(() => setActiveCard(null), 1000);
+  };
 
   if (!project) {
     return (
@@ -241,7 +250,7 @@ export default function ProjectDetail() {
         <>
           {project.background && (
             <section className="detail-section">
-              <InfoCard title="项目背景">
+              <InfoCard title="项目背景" isActive={activeCard === 'background'} onClick={() => handleCardClick('background')}>
                 <div className="bg-grid">
                   <div className="bg-item">
                     <h4>用户痛点</h4>
@@ -258,7 +267,7 @@ export default function ProjectDetail() {
           )}
 
           <section className="detail-section">
-            <InfoCard title="目标用户">
+            <InfoCard title="目标用户" isActive={activeCard === 'targetUsers'} onClick={() => handleCardClick('targetUsers')}>
               <ul className="card-list">
                 {artemisTargetUsers.map((u, i) => (
                   <li key={i}>{u}</li>
@@ -277,7 +286,7 @@ export default function ProjectDetail() {
           </section>
 
           <section className="detail-section">
-            <InfoCard title="核心算法逻辑">
+            <InfoCard title="核心算法逻辑" isActive={activeCard === 'algorithm'} onClick={() => handleCardClick('algorithm')}>
               <ul className="card-list">
                 {artemisAlgorithm.map((a, i) => (
                   <li key={i}>{parseBold(a)}</li>
@@ -287,7 +296,7 @@ export default function ProjectDetail() {
           </section>
 
           <section className="detail-section">
-            <InfoCard title="用户流程">
+            <InfoCard title="用户流程" isActive={activeCard === 'userFlow'} onClick={() => handleCardClick('userFlow')}>
               <div className="flow-steps">
                 {artemisUserFlow.map((step, i) => (
                   <span key={i} className="flow-step">{step}</span>
@@ -297,18 +306,18 @@ export default function ProjectDetail() {
           </section>
 
           <section className="detail-section">
-            <InfoCard title="项目反思与复盘">
+            <InfoCard title="项目反思与复盘" isActive={activeCard === 'reflection'} onClick={() => handleCardClick('reflection')}>
               <p className="reflection-intro">{artemisReflection.intro}</p>
               <div className="reflection-sections">
                 {artemisReflection.sections.map((section, i) => (
                   <div key={i} className="reflection-section">
-                    <h4 className="reflection-title">{section.title}</h4>
+                    <h3 className="reflection-title">{section.title}</h3>
                     {section.points.map((point, j) => (
                       <p key={j} className="reflection-main-point">{parseBold(point)}</p>
                     ))}
                     {section.subSections && section.subSections.map((sub, k) => (
                       <div key={k} className="reflection-subsection">
-                        <h5 className="reflection-sub-title">{sub.subTitle}</h5>
+                        <p className="reflection-sub-title">{sub.subTitle}</p>
                         <ul className="reflection-sub-points">
                           {sub.subPoints.map((sp, l) => (
                             <li key={l}>{parseBold(sp)}</li>

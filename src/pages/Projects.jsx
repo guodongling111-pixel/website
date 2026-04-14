@@ -1,8 +1,16 @@
+import { useState } from 'react';
 import { projects } from '../data/content';
 import ProjectCard from '../components/ProjectCard';
 import './Projects.css';
 
 export default function Projects() {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleCardClick = (id) => {
+    setActiveCard(id);
+    setTimeout(() => setActiveCard(null), 1000);
+  };
+
   return (
     <div className="projects-page">
       <div className="page-header">
@@ -11,7 +19,12 @@ export default function Projects() {
       </div>
       <div className="projects-grid">
         {projects.map(project => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard 
+            key={project.id} 
+            project={project} 
+            isActive={activeCard === project.id}
+            onClick={() => handleCardClick(project.id)}
+          />
         ))}
       </div>
     </div>

@@ -101,7 +101,7 @@ export const projects = [
 
 export const profile = {
   name: '郭冬玲',
-  role: '产品实习生 | 产品设计 × 前端实现 × 数据应用',
+  role: '产品实习生',
   intro: '具备产品思维与数据理解能力，擅长从用户需求出发，将复杂问题拆解为清晰可执行的产品方案',
   background: {
     education: '英语 + 国际贸易双专业',

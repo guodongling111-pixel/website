@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, isActive, onClick }) {
   return (
-    <div className="project-card">
+    <div 
+      className={`project-card ${isActive ? 'active' : ''}`}
+      onClick={onClick}
+    >
       <h3 className="project-title">{project.title}</h3>
       <p className="project-subtitle">{project.subtitle}</p>
       <p className="project-description">{project.description}</p>
