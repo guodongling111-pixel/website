@@ -10,7 +10,12 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <BackgroundEffect />
+      <BackgroundEffect 
+        colors={['#E6EFFF', '#FFE6F8', '#FFF3E8']}
+        resolution={0.4}
+        simResolution={128}
+        style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
+      />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

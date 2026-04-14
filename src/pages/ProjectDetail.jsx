@@ -228,6 +228,13 @@ export default function ProjectDetail() {
             <span key={t} className="tech-tag">{t}</span>
           ))}
         </div>
+        {project.links?.demo && (
+          <div className="project-demo">
+            <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="demo-link">
+              Live Demo ↗ <span className="vpn-notice-inline">* 因引入地图服务（Leaflet），访问网站可能需要科学上网</span>
+            </a>
+          </div>
+        )}
       </header>
 
       {project.id === 'artemis' && (

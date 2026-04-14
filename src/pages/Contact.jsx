@@ -6,10 +6,19 @@ export default function Contact() {
     <div className="contact-page">
       <h1>Contacts</h1>
       
-      <div className="contact-list">
-        <p>Phone: 15172873607</p>
-        <p>Email: <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
-        <p>GitHub: <a href={profile.github} target="_blank" rel="noopener noreferrer">guodongling111-pixel</a></p>
+      <div className="contact-card">
+        <div className="contact-item">
+          <span className="contact-label">Phone</span>
+          <span className="contact-value">19819678224</span>
+        </div>
+        <div className="contact-item">
+          <span className="contact-label">Email</span>
+          <a href={`mailto:${profile.email}`} className="contact-link">{profile.email}</a>
+        </div>
+        <div className="contact-item">
+          <span className="contact-label">GitHub</span>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="contact-link">guodongling111-pixel</a>
+        </div>
       </div>
     </div>
   );
