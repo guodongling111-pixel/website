@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import BackgroundEffect from './components/BackgroundEffect';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
@@ -9,6 +10,7 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
+      <BackgroundEffect />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
