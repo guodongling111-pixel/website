@@ -63,10 +63,10 @@ export const artemisFeatures = [
 export const projects = [
   {
     id: 'artemis',
-    title: '阿尔忒弥斯 Artemis',
+    title: 'RouterCrafter',
     subtitle: '智能旅行行程规划工具',
     description: '解决旅行规划信息过载问题的地图驱动型行程生成工具，通过空间路径优化与结构化行程设计，帮助用户高效完成旅行规划。',
-    fullDescription: '阿尔忒弥斯是一款面向自由行用户的智能行程规划工具，致力于解决旅行信息分散、规划效率低和路线不合理的问题。通过地图驱动的路径优化与结构化行程设计，帮助用户从海量攻略中快速生成清晰、可执行的旅行路线。',
+    fullDescription: 'RouterCrafter是一款面向自由行用户的智能行程规划工具，致力于解决旅行信息分散、规划效率低和路线不合理的问题。通过地图驱动的路径优化与结构化行程设计，帮助用户从海量攻略中快速生成清晰、可执行的旅行路线。',
     background: {
       problem: '自由行用户（尤其是年轻女性与Citywalk人群）在旅行规划中面临信息过载问题，需要在小红书、抖音等多个平台反复筛选攻略，信息碎片化严重。同时行程规划过程复杂，需要兼顾路线合理性、时间安排与餐饮选择，整体效率较低。',
       goal: '构建一个以地图为核心的智能行程规划系统，通过结构化信息与路径优化算法，帮助用户快速生成高质量旅行路线，并具备可扩展为真实产品的能力。',
@@ -83,18 +83,6 @@ export const projects = [
     links: {
       github: 'https://github.com/guodongling111-pixel',
       demo: 'https://tourism-app-teal.vercel.app/',
-    },
-  },
-  {
-    id: 'ui-practice',
-    title: 'UI组件练习',
-    subtitle: '前端组件与界面设计',
-    description: '用于练习前端组件开发与界面设计的项目集合。',
-    fullDescription: '包含多个可复用UI组件与界面设计练习，重点在于组件结构与交互设计。',
-    features: ['组件复用', '响应式设计', '基础交互效果'],
-    tech: ['React', 'CSS'],
-    links: {
-      github: 'https://github.com',
     },
   },
 ];
